@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>The Atelier Accessories | Luxury Accents</title>
+          <link href="./css/style.css" rel="stylesheet"/>
+
+          <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     </head>
+     <body class="boutique-subpage alternative-theme">
+          
+          <header>
+               <a href="index.html" class="logo"><img src="./images/Website_Logo.png" alt="website logo"/></a>
+               <div class="navmenu">
+                    <ul>
+                         <li><a href="index.html#Home">Home</a></li>
+                         <li><a href="index.html#Outfits">Outfits</a></li>
+                         <li><a href="bags.html">Bags</a></li>
+                         <li><a href="accessories.html" class="active-nav">Accessories</a></li>
+                         <li><a href="index.html#Contact">Contact</a></li>
+                    </ul>
+               </div>
+               <div class="nav-icon">
+                    <a href="#" aria-label="Search"><i id="search" class='bx bx-search'></i></a>
+                    <a href="#" aria-label="Account"><i id="login" class='bx bx-user'></i></a>
+                    <a href="#" aria-label="Cart" class="cart-icon-wrapper">
+                         <i id="shoppings" class='bx bx-cart'></i>
+                         <span id="cart-count">0</span>
+                    </a>
+                    <a href="#" aria-label="Favorites" class="fav-icon-wrapper">
+                         <i id="favorite" class='bx bx-heart'></i>
+                         <span id="fav-count">0</span>
+                    </a>
+                    <div id="menu-icon" class="minimal-burger"><span></span><span></span><span></span></div>
+               </div>
+          </header>
+
+          <div class="searchbar"><div class="search-inner"><input type="text" placeholder="Search accents..."/><a href="#"><i class='bx bx-search'></i></a></div></div>
+          <div class="account"><h2>Welcome Back</h2><input type="text" placeholder="Email"/><input type="password" placeholder="Password"/><a href="#" class="main-btn btn-full">Login</a></div>
+          <div class="shoppings"><h2>Your Cart</h2><div class="cart-items-container"></div><a href="#" class="main-btn">Checkout <i class='bx bx-cart'></i></a></div>
+          <div class="favorite"><h2>Your Wishlist</h2><div class="fav-items-container"></div></div>
+
+          <section class="boutique-hero acc-bg">
+               <div class="hero-overlay variations"></div>
+               <div class="boutique-hero-text">
+                    <span>Delicate Adornments</span>
+                    <h1>The Accessories Atelier</h1>
+                    <p>Finely calibrated statements. Explore our curation of sustainable jewelry, silk scarves, and handmade accents.</p>
+               </div>
+          </section>
+
+          <section class="gallery-showcase">
+               <div class="outfits dynamic-masonry-look">
+                    
+                    <div class="row luxury-accent-card" data-id="acc1">
+                         <div class="img-frame-round">
+                              <img src="./images/accessory1.avif" alt="Baroque Pearl Drop" />
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Baroque Pearl Drops</h4><p>$75</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+                    <div class="row luxury-accent-card" data-id="acc2">
+                         <div class="img-frame-round">
+                              <img src="./images/accessory2.avif" alt="Silk Hair Bow"/>
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Monochrome Silk Scarf</h4><p>$48</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+                    <div class="row luxury-accent-card" data-id="acc3">
+                         <div class="img-frame-round">
+                              <img src="./images/accessory3.avif" alt="Chunky Chain Bracelet"/>
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>24k Gold Twisted Band</h4><p>$120</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+               </div>
+          </section>
+
+          <footer class="subpage-footer">
+               <p>© 2026 Studio Curator. Return to <a href="index.html">Main Atelier</a>.</p>
+          </footer>
+
+          <script src="script.js"></script>
+     </body>
+</html>

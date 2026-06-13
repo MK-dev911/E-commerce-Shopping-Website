@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>Responsive E-Commerce Shopping Website</title>
+          <link href="./css/style.css" rel="stylesheet"/>
+
+          <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+          
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     </head>
+     <body>
+          
+          <header>
+               <a href="#" class="logo"><img src="./images/Website_Logo.png" alt="website logo"/></a>
+
+               <div class="navmenu">
+                    <ul>
+                         <li><a href="#Home">Home</a></li>
+                         <li><a href="#Outfits">Outfits</a></li>
+                         <li><a href="bags.html">Bags</a></li>
+                         <li><a href="accessories.html">Accessories</a></li>
+                         <li><a href="#Client">Client</a></li>
+                         <li><a href="#Updates">Updates</a></li>
+                         <li><a href="#Contact">Contact</a></li>
+                    </ul>
+               </div>
+     
+               <div class="nav-icon">
+                    <a href="#" aria-label="Search"><i id="search" class='bx bx-search'></i></a>
+                    <a href="#" aria-label="Account"><i id="login" class='bx bx-user'></i></a>
+                    <a href="#" aria-label="Cart" class="cart-icon-wrapper">
+                         <i id="shoppings" class='bx bx-cart'></i>
+                         <span id="cart-count">0</span>
+                    </a>
+                    <a href="#" aria-label="Favorites" class="fav-icon-wrapper">
+                         <i id="favorite" class='bx bx-heart'></i>
+                         <span id="fav-count">0</span>
+                    </a>
+     
+                    <div id="menu-icon" class="minimal-burger">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                    </div>
+               </div>
+          </header>
+
+          <div class="searchbar">
+               <div class="search-inner">
+                    <input type="text" placeholder="Search our collection..."/>
+                    <a href="#"><i class='bx bx-search'></i></a>
+               </div>
+          </div>
+
+          <div class="account">
+               <h2>Welcome Back</h2>
+               <p>Please log in to your account</p>
+               <input type="text" id="username" placeholder="Username or Email"/>
+               <input type="password" id="password" placeholder="Password"/>
+               <a href="#" class="forgot_pass">Forgot Password?</a>
+               <a href="#" class="main-btn btn-full">Login</a>
+          </div>
+
+          <div class="shoppings">
+               <h2>Your Cart</h2>
+               <div class="cart-items-container">
+                    </div>
+               <a href="#" class="main-btn">Checkout <i class='bx bx-cart'></i></a>
+          </div>
+
+          <div class="favorite">
+               <h2>Your Wishlist</h2>
+               <div class="fav-items-container">
+                    </div>
+          </div>
+
+          <section id="Home" class="main-home">
+               <div class="background-img">
+                    <img src="./images/background-image.png" alt="background image">
+               </div>
+               <div class="background-video">
+                    <video autoplay loop muted playsinline>
+                         <source src="./images/LBG2.mp4" type="video/mp4">
+                         Your browser does not support the video tag.
+                    </video>
+               </div>
+               <div class="main-text">
+                    <h5>Women Spring Collection</h5>
+                    <h1>Spring Awakens 2025:<br/> A Collection of Fresh Style</h1>
+                    <p>Blossom in Beauty, Shine in Style ✨</p>
+                    <a href="#Outfits" class="main-btn">Shop Now<i class='bx bx-right-arrow-alt'></i></a>
+               </div>
+               <div class="dowm-arrow"><a href="#trending" class="down"><i class='bx bx-down-arrow-alt'></i></a></div>
+          </section>
+
+          <section class="trending-outfits" id="trending">
+               <div class="center-text">
+                    <h2>Our Trending <span>Outfits</span></h2>
+               </div>
+               <div id="Outfits" class="outfits">
+                    <div class="row" data-id="p1">
+                         <img src="./images/img2.png" alt="Cool Pastel Set"/>
+                         <div class="product-text"><h5>Sale</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Cool Pastel Set</h4><p>$99</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p2">
+                         <img src="./images/img3.png" alt="Cute Yellow Dress"/>
+                         <div class="product-text"><h5>New</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Cute Yellow Dress</h4><p>$129</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p3">
+                         <img src="./images/img7.png" alt="Strawberry Dress"/>
+                         <div class="product-text"><h5>Hot</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Strawberry Dress</h4><p>$115</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p4">
+                         <img src="./images/img1.png" alt="Fancy Lady Dress"/>
+                         <div class="product-text"><h5>Hot</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Fancy Lady Dress</h4><p>$110</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p5">
+                         <img src="./images/img8.png" alt="Sheer Tops"/>
+                         <div class="product-text"><h5>New</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Sheer Tops</h4><p>$85</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p6">
+                         <img src="./images/img6.png" alt="Pastel Blue Jacket"/>
+                         <div class="product-text"><h5>Pastel</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Pastel Blue Jacket</h4><p>$140</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p7">
+                         <img src="./images/img4.png" alt="Cool Black Pullover"/>
+                         <div class="product-text"><h5>Cool</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Cool Black Pullover</h4><p>$99</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+                    <div class="row" data-id="p8">
+                         <img src="./images/img5.png" alt="Cloud Jeans"/>
+                         <div class="product-text"><h5>Trend</h5></div>
+                         <div class="cart-action-icon" title="Add to Cart"><i class='bx bx-plus-circle'></i></div>
+                         <div class="ratting">
+                              <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                         </div>
+                         <div class="price-box">
+                              <div class="price"><h4>Cloud Jeans</h4><p>$120</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+          <section id="Client" class="client-reviews">
+               <div class="reviews">
+                    <h3>Client Reviews</h3>
+                    <img src="./images/AI client pic.jpg" alt="Client Review Profile"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi ipsa nemo assumenda minus.</p>
+                    <h2>Happy Customer</h2>
+                    <p>Verified Buyer</p>
+               </div>
+          </section>
+
+          <section id="Updates" class="Update-news">
+               <div class="up-center-text"><h2>New Updates</h2></div>
+               <div class="update-cart">
+                    <div class="cart">
+                         <img src="./images/summer5.png" alt="Editorial Row 1"/>
+                         <h5>5 sep 2025</h5>
+                         <h4>Let's Start bring sale in this summer vacation.</h4>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                         <h6>Continue Reading..</h6>
+                    </div>
+                    <div class="cart">
+                         <img src="./images/summer1.png" alt="Editorial Row 2"/>
+                         <h5>5 sep 2025</h5>
+                         <h4>Let's Start bring sale in this summer vacation.</h4>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                         <h6>Continue Reading..</h6>
+                    </div>
+                    <div class="cart">
+                         <img src="./images/summer2.png" alt="Editorial Row 3"/>
+                         <h5>5 sep 2025</h5>
+                         <h4>Let's Start bring sale in this summer vacation.</h4>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                         <h6>Continue Reading..</h6>
+                    </div>
+               </div>
+          </section>
+
+          <section id="Contact" class="contact">
+               <div class="contact-info">
+                    <div class="first-info">
+                         <img src="./images/Website_Logo.png" alt="logo"/>
+                         <p>Khorasan Razavi, <br/> Iran</p>
+                         <p>093788239451</p>
+                         <p>MahdieKarizi@gmail.com</p>
+                         <div class="social-icon">
+                              <a href="#"><i class='bx bxl-facebook'></i></a>
+                              <a href="#"><i class='bx bxl-twitter'></i></a>
+                              <a href="#"><i class='bx bxl-instagram'></i></a>
+                              <a href="#"><i class='bx bxl-youtube'></i></a>
+                              <a href="#"><i class='bx bxl-linkedin'></i></a>
+                         </div>
+                    </div>
+                    <div class="second-info">
+                         <h4>Support</h4>
+                         <p>Contact us</p><p>About page</p><p>Size Guide</p><p>Shopping & Returns</p><p>Privacy</p>
+                    </div>
+                    <div class="third-info">
+                         <h4>Shop</h4>
+                         <p>Women's Shopping</p><p><a href="bags.html">Bags Shopping</a></p><p>Kid's Shopping</p><a href="accessories.html"><p>Accessories</p></a><p>Discount</p>
+                    </div>
+                    <div class="fourth-info">
+                         <h4>Company</h4>
+                         <p>About</p><p>Blog</p><p>Affiliate</p><p>Login</p>
+                    </div>
+                    <div class="fiveth-info">
+                         <h4>Subscribe</h4>
+                         <p>Receive Updates, Hot Deals, Discount Sent Straight In Your Inbox Daily</p>
+                    </div>
+               </div>
+          </section>
+
+          <div class="end-text"><p>Copyright @2025. All Rights Reserved.</p></div>
+
+          <script src="script.js"></script>
+     </body>
+</html>

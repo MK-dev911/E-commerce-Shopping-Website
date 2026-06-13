@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>The Bag Gallery | Luxury Boutique</title>
+          <link href="./css/style.css" rel="stylesheet"/>
+
+          <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     </head>
+     <body class="boutique-subpage">
+          
+          <header>
+               <a href="index.html" class="logo"><img src="./images/Website_Logo.png" alt="website logo"/></a>
+               <div class="navmenu">
+                    <ul>
+                         <li><a href="index.html#Home">Home</a></li>
+                         <li><a href="index.html#Outfits">Outfits</a></li>
+                         <li><a href="bags.html" class="active-nav">Bags</a></li>
+                         <li><a href="accessories.html">Accessories</a></li>
+                         <li><a href="index.html#Contact">Contact</a></li>
+                    </ul>
+               </div>
+               <div class="nav-icon">
+                    <a href="#" aria-label="Search"><i id="search" class='bx bx-search'></i></a>
+                    <a href="#" aria-label="Account"><i id="login" class='bx bx-user'></i></a>
+                    <a href="#" aria-label="Cart" class="cart-icon-wrapper">
+                         <i id="shoppings" class='bx bx-cart'></i>
+                         <span id="cart-count">0</span>
+                    </a>
+                    <a href="#" aria-label="Favorites" class="fav-icon-wrapper">
+                         <i id="favorite" class='bx bx-heart'></i>
+                         <span id="fav-count">0</span>
+                    </a>
+                    <div id="menu-icon" class="minimal-burger"><span></span><span></span><span></span></div>
+               </div>
+          </header>
+
+          <div class="searchbar"><div class="search-inner"><input type="text" placeholder="Search bags..."/><a href="#"><i class='bx bx-search'></i></a></div></div>
+          <div class="account"><h2>Welcome Back</h2><input type="text" placeholder="Email"/><input type="password" placeholder="Password"/><a href="#" class="main-btn btn-full">Login</a></div>
+          <div class="shoppings"><h2>Your Cart</h2><div class="cart-items-container"></div><a href="#" class="main-btn">Checkout <i class='bx bx-cart'></i></a></div>
+          <div class="favorite"><h2>Your Wishlist</h2><div class="fav-items-container"></div></div>
+
+          <section class="boutique-hero bag-bg">
+               <div class="hero-overlay"></div>
+               <div class="boutique-hero-text">
+                    <span>Couture Curations</span>
+                    <h1>The Bag Gallery</h1>
+                    <p>Sculptural silhouettes, premium leathers, and functional artistry designed to elevate your daily expression.</p>
+               </div>
+          </section>
+
+          <section class="editorial-statement">
+               <div class="statement-wrap">
+                    <p class="drop-caps">T</p>
+                    <p class="statement-text">Every bag tells a story of craftsmanship. Our 2026 collection features hand-stitched details, architectural hardware, and organic color palettes that seamlessly blur the lines between practical utility and high-fashion luxury statements.</p>
+               </div>
+          </section>
+
+          <section class="gallery-showcase">
+               <div class="outfits editorial-grid">
+                    
+                    <div class="row legacy-card" data-id="bag1">
+                         <div class="img-frame">
+                              <img src="./images/bag1.avif" alt=""/>
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="product-text"><h5>Bespoke</h5></div>
+                         <div class="price-box">
+                              <div class="price"><h4>Croissant Shoulder Bag</h4><p>$245</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+                    <div class="row legacy-card " data-id="bag2">
+                         <div class="img-frame">
+                              <img src="./images/bag2.avif" alt=""/>
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="product-text"><h5>Bespoke</h5></div>
+                         <div class="price-box">
+                              <div class="price"><h4>Croissant Shoulder Bag</h4><p>$245</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+                    <div class="row legacy-card" data-id="bag3">
+                         <div class="img-frame">
+                              <img src="./images/bag3.avif" alt=""/>
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="product-text"><h5>Limited</h5></div>
+                         <div class="price-box">
+                              <div class="price"><h4>Earthy Suede Slouch Bag</h4><p>$310</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+                    <div class="row legacy-card" data-id="bag4">
+                         <div class="img-frame">
+                              <img src="./images/bag4.avif" alt="" />
+                              <div class="cart-action-icon"><i class='bx bx-plus-circle'></i></div>
+                         </div>
+                         <div class="product-text"><h5>New</h5></div>
+                         <div class="price-box">
+                              <div class="price"><h4>Terracotta Crossbody Box</h4><p>$165</p></div>
+                              <div class="wishlist-toggle-btn"><i class='bx bx-heart'></i></div>
+                         </div>
+                    </div>
+
+               </div>
+          </section>
+
+          <footer class="subpage-footer">
+               <p>© 2026 Studio Curator. Back to <a href="index.html">Main Atelier</a>.</p>
+          </footer>
+
+          <script src="script.js"></script>
+     </body>
+</html>
