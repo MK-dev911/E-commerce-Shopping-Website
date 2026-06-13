@@ -1,0 +1,1001 @@
+:root {
+     --lighter-pink-color: #faedf0;
+     --pink-color: #ffdee4;  
+     --accent-pink-glow: #ffd0d9;
+     --red-color: #E02122; 
+     --yellow-color: #FAFBD0;
+     --brown-color: #8B5E3C;
+     --dark-brown-color: #54422b;
+     --black-color: #2c2c2c;
+     --green-color: rgb(133, 193, 60);
+     --aesthetic-bg: rgba(255, 253, 253, 0.96); 
+}     
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+     font-family: "Jost", sans-serif;
+     list-style: none;
+     text-decoration: none;
+}
+h1 {
+     font-family: 'Great Vibes', cursive;
+     font-size: 2.5rem;
+}
+body, p, a {
+     font-family: 'Lato', sans-serif;
+} 
+
+/* ==========================================================================
+   NAVIGATION BAR TOP LAYOUT ARCHITECTURE
+   ========================================================================== */
+header{
+     position: fixed;
+     width: 100%;
+     top: 0;
+     right: 0;
+     z-index: 1000;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 8%; 
+     background-color: var(--pink-color);
+     height: 77px; 
+     box-shadow: 0 4px 20px rgba(139, 94, 60, 0.08);
+     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+header.sticky {
+     background-color: var(--pink-color);
+     padding: 10px 8%; 
+     height: 77px;
+     box-shadow: 0 4px 25px rgba(139, 94, 60, 0.15);
+}
+
+.logo img{
+     max-width: 150px;
+     height: auto;
+}
+
+/* Desktop Nav Menu Layout */
+.navmenu ul {
+     display: flex;
+     gap: 15px;
+}
+.navmenu a{
+     color: var(--dark-brown-color);
+     font-size: 15px;
+     text-transform: capitalize;
+     padding: 8px 14px;
+     font-weight: 400;
+     transition: all .35s ease;
+}
+.navmenu a:hover{
+     color: var(--red-color);
+}
+
+/* ==========================================================================
+   NAVIGATION ACTION LINKS & ICON HEADERS
+   ========================================================================== */
+.nav-icon{
+     display: flex;
+     align-items: center;
+     gap: 8px;
+}
+.nav-icon a {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 42px;
+     height: 42px;
+     border-radius: 50%;
+     background: transparent;
+     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.nav-icon i{
+     color: var(--dark-brown-color);
+     font-size: 22px;
+     transition: all 0.3s ease;
+}
+.nav-icon a:hover,
+.nav-icon a.active-icon {
+     background-color: var(--accent-pink-glow);
+     box-shadow: inset 0 0 4px rgba(224, 33, 34, 0.05);
+}
+.nav-icon a:hover i,
+.nav-icon a.active-icon i {
+     color: var(--red-color);
+     transform: scale(1.1);
+}
+
+/* Dynamic Notification Indicator Badge Counters */
+.cart-icon-wrapper, .fav-icon-wrapper {
+     position: relative;
+}
+#cart-count, #fav-count {
+     position: absolute;
+     top: -2px;
+     right: -2px;
+     background-color: var(--red-color);
+     color: #fff;
+     font-size: 10px;
+     font-weight: 700;
+     border-radius: 50%;
+     width: 16px;
+     height: 16px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 2px 5px rgba(224, 33, 34, 0.2);
+}
+
+/* SLEEK MINIMALIST BURGER-TO-X TOGGLE SYSTEM */
+.minimal-burger {
+     display: none; /* Desktop hidden */
+     width: 22px;
+     height: 20px;
+     position: relative;
+     cursor: pointer;
+     z-index: 10001;
+     margin-left: 12px;
+}
+.minimal-burger span {
+     display: block;
+     position: absolute;
+     height: 2.5px;
+     width: 100%;
+     background-color: var(--dark-brown-color);
+     border-radius: 10px;
+     opacity: 1;
+     left: 0;
+     transform: rotate(0deg);
+     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.minimal-burger span:nth-child(1) { top: 0px; }
+.minimal-burger span:nth-child(2) { top: 8px; }
+.minimal-burger span:nth-child(3) { top: 16px; }
+
+/* Morphing Into Close Icon (X Form) */
+.minimal-burger.open-icon span:nth-child(1) {
+     top: 8px;
+     transform: rotate(135deg);
+     background-color: var(--red-color);
+}
+.minimal-burger.open-icon span:nth-child(2) {
+     opacity: 0;
+     left: -40px;
+}
+.minimal-burger.open-icon span:nth-child(3) {
+     top: 8px;
+     transform: rotate(-135deg);
+     background-color: var(--red-color);
+}
+
+/* ==========================================================================
+   FLOATING LUXURY INTERACTION MODAL DRAWERS
+   ========================================================================== */
+.searchbar, .account, .shoppings, .favorite {
+     position: fixed;
+     top: 92px; 
+     right: -460px; 
+     width: 410px;
+     max-width: 92%;
+     background: var(--aesthetic-bg);
+     backdrop-filter: blur(10px); 
+     -webkit-backdrop-filter: blur(10px);
+     border: 2px solid var(--pink-color);
+     box-shadow: -5px 15px 35px rgba(84, 66, 43, 0.1);
+     padding: 2.5rem 1.8rem;
+     z-index: 999;
+     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+     border-radius: 2rem;
+     display: flex;
+     flex-direction: column;
+}
+.searchbar.active, .account.active, .shoppings.active, .favorite.active {
+     right: 2%; 
+}
+
+/* 1. Creative Search Drawer Details */
+.searchbar {
+     height: auto;
+     padding: 1.8rem;
+}
+.search-inner {
+     display: flex;
+     align-items: center;
+     background: var(--lighter-pink-color);
+     border: 1px solid rgba(139, 94, 60, 0.25);
+     border-radius: 2rem;
+     padding: 0.4rem 1.2rem;
+     transition: all 0.3s ease;
+}
+.search-inner:focus-within {
+     border-color: var(--red-color);
+     background: #fff;
+     box-shadow: 0 0 10px rgba(220, 33, 34, 0.08);
+}
+.search-inner input {
+     width: 100%;
+     border: none;
+     background: transparent;
+     outline: none;
+     padding: 0.6rem 0;
+     font-size: 0.95rem;
+     color: var(--dark-brown-color);
+}
+.search-inner input::placeholder {
+     color: #a08c8c;
+}
+.search-inner .bx-search {
+     font-size: 22px;
+     color: var(--brown-color);
+     cursor: pointer;
+}
+
+/* 2. Login Drawer Form Details */
+.account {
+     height: auto;
+     gap: 1.2rem;
+}
+.account h2 {
+     font-family: 'Lato', sans-serif;
+     font-size: 1.6rem;
+     color: var(--dark-brown-color);
+     font-weight: 700;
+     text-align: center;
+     letter-spacing: 0.5px;
+}
+.account p {
+     text-align: center;
+     font-size: 0.9rem;
+     color: var(--brown-color);
+     opacity: 0.8;
+     margin-top: -10px;
+     margin-bottom: 5px;
+}
+.account input {
+     width: 100%;
+     background: var(--lighter-pink-color);
+     border: 1px solid rgba(139, 94, 60, 0.2);
+     border-radius: 1rem;
+     padding: 0.9rem 1.2rem;
+     font-size: 0.95rem;
+     outline: none;
+     color: var(--black-color);
+     transition: all 0.3s ease;
+}
+.account input:focus {
+     border-color: var(--red-color);
+     background: #fff;
+     box-shadow: 0 4px 12px rgba(224, 33, 34, 0.06);
+}
+.forgot_pass {
+     font-size: 0.85rem;
+     color: var(--dark-brown-color);
+     text-align: right;
+     transition: 0.3s;
+     font-weight: 500;
+}
+.forgot_pass:hover {
+     color: var(--red-color);
+}
+.btn-full {
+     text-align: center;
+     width: 100%;
+     margin-top: 10px;
+     cursor: pointer;
+}
+
+/* 3. Dynamic Shopping Cart & Wishlist Drawer Layouts */
+.shoppings, .favorite {
+     height: calc(100vh - 115px);
+     justify-content: space-between;
+}
+.shoppings h2, .favorite h2 {
+     font-size: 1.4rem;
+     color: var(--dark-brown-color);
+     border-bottom: 1.5px solid var(--pink-color);
+     padding-bottom: 12px;
+     margin-bottom: 15px;
+     font-weight: 700;
+}
+.cart-items-container, .fav-items-container {
+     flex-grow: 1;
+     overflow-y: auto;
+     display: flex;
+     flex-direction: column;
+     gap: 1.2rem;
+     margin-bottom: 20px;
+     padding-right: 5px;
+}
+.cart-items-container::-webkit-scrollbar, .fav-items-container::-webkit-scrollbar {
+     width: 4px;
+}
+.cart-items-container::-webkit-scrollbar-thumb, .fav-items-container::-webkit-scrollbar-thumb {
+     background: var(--pink-color);
+     border-radius: 10px;
+}
+.checkbox {
+     width: 100%;
+     height: auto;
+     background: #fff;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border: 1px solid rgba(139, 94, 60, 0.1);
+     border-radius: 1.2rem;
+     padding: 0.9rem;
+     box-shadow: 0 4px 10px rgba(139, 94, 60, 0.03);
+}
+.checkbox img {
+     width: 65px;
+     height: 65px;
+     object-fit: cover;
+     border-radius: 0.8rem;
+}
+.item-details {
+     flex-grow: 1;
+     padding: 0 15px;
+}
+.checkbox h3 {
+     font-size: 0.95rem;
+     color: var(--dark-brown-color);
+     font-weight: 600;
+}
+.checkbox p {
+     font-size: 0.85rem;
+     color: #8c7676;
+     margin-top: 3px;
+}
+.item-actions {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+}
+.item-actions a {
+     color: #b59898;
+     font-size: 16px;
+     width: 26px;
+     height: 26px;
+     border-radius: 50%;
+     background: var(--lighter-pink-color);
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.2s ease;
+}
+.item-actions a:hover {
+     background-color: var(--pink-color);
+     color: var(--red-color);
+     transform: scale(1.1);
+}
+.item-actions a.remove-item-btn {
+     margin-left: 4px;
+     background: #fff0f0;
+}
+.item-actions a.remove-item-btn:hover {
+     background: var(--red-color);
+     color: #fff;
+}
+.shoppings .main-btn {
+     width: 100%;
+     text-align: center;
+}
+
+/* ==========================================================================
+   MAIN CORE THEME BLOCKS LAYOUT
+   ========================================================================== */
+section{
+     padding: 5% 10%;
+}
+.main-home{
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden; 
+     display: grid;
+     grid-template-columns: repeat(1, 1fr);
+     align-items: center;
+}
+.main-home video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+.background-img img {
+     position: absolute;
+     bottom: 0; 
+     right: 15%;
+     width: 29%; 
+     height: auto;
+     z-index: 0;
+}
+.main-text {
+     position: absolute;
+     top: 40%; 
+     left: 30%; 
+     transform: translateX(-50%);
+     z-index: 1;
+}
+.main-text h5{
+     color: var(--red-color);
+     font-size: 16px;
+     text-transform: capitalize;
+     font-weight: 500;
+}
+.main-text h1{
+     color: var(--brown-color);
+     font-size: 65px;
+     text-transform: capitalize;
+     line-height: 1.1;
+     font-weight: 600;
+     margin: 6px 0 10px;
+}
+.main-text p{
+     color: var(--dark-brown-color);
+     font-size: 20px;
+     font-style: italic;
+     margin-bottom: 20px;
+}
+.main-btn{
+     display: inline-block;
+     color: var(--dark-brown-color);
+     font-size: 16px;
+     font-weight: 500;
+     text-transform: capitalize;
+     border: 2px solid var(--brown-color);
+     border-radius: 10px;
+     padding: 12px 25px;
+     transition: all .42s ease;
+}
+.main-btn:hover{
+     background-color: var(--red-color);
+     color: #fff;
+     border-color: var(--red-color);
+}
+.dowm-arrow{
+     position: absolute;
+     top: 85%;
+     right: 11%;
+}
+.down i{
+     font-size: 30px;
+     color: var(--brown-color);
+     border: 2px solid var(--brown-color);
+     border-radius: 50px;
+     padding: 12px 12px;
+}
+.down i:hover{
+     background-color: var(--brown-color);
+     color: #fff;
+     transition: all .42s ease;
+}
+
+/* Outfits Visual Framework */
+.trending-outfits{
+     background-color: var(--lighter-pink-color);
+}
+.center-text h2{
+     color: #111;
+     font-size: 28px;
+     text-transform: capitalize;
+     text-align: center;
+     margin: 25px;
+}
+.center-text span{
+     color: var(--red-color);
+}
+.outfits{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+     gap: 2rem;
+}
+.row{
+     position: relative;
+     transition: all .40s;
+}
+.row img{
+     width: 100%;
+     height: auto;
+     transition: all .40s;
+}
+.row img:hover{
+     transform: scale(0.9);
+}
+.product-text h5{
+     position: absolute;
+     top: 13px;
+     left: 13px;
+     color: #fff;
+     font-size: 12px;
+     font-weight: 500;
+     text-transform: uppercase;
+     background-color: #27b737;
+     padding: 3px 10px;
+     border-radius: 2px;
+}
+
+/* Image Hover Pop-Up Cart trigger */
+.cart-action-icon{
+     position: absolute;
+     right: 10px;
+     top: 10px;
+     font-size: 24px;
+     color: var(--dark-brown-color);
+     background: rgba(255, 255, 255, 0.8);
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.cart-action-icon:hover{
+     color: #fff;
+     background-color: var(--red-color);
+     transform: scale(1.1);
+}
+.ratting i{
+     color: #ff8c00;
+     font-size: 18px;
+     margin-top: 8px;
+     display: inline-block;
+}
+
+/* Bottom Container Box for Text & Wishlist Elements */
+.price-box {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 5px;
+}
+.price h4{
+     color: #111;
+     font-size: 16px;
+     text-transform: capitalize;
+     font-weight: 400;
+}
+.price p{
+     color: #151515;
+     font-size: 14px;
+     font-weight: 600;
+}
+.wishlist-toggle-btn {
+     font-size: 22px;
+     color: #b59898;
+     cursor: pointer;
+     transition: all 0.25s ease;
+     padding: 4px;
+}
+.wishlist-toggle-btn:hover {
+     color: var(--red-color);
+     transform: scale(1.15);
+}
+.wishlist-toggle-btn.liked i {
+     color: var(--red-color);
+}
+
+/* Reviews Panel */
+.client-reviews{
+     background-color: var(--pink-color);
+}
+.reviews{
+     text-align: center;
+}
+.reviews h3{
+     color: #111;
+     font-size: 25px;
+     text-transform: capitalize;
+     text-align: center;
+     font-weight: 700;
+}
+.reviews img{
+     width: 100px;
+     height: auto;
+     border-radius: 50px;
+     margin: 10px 0;
+}
+.reviews p{
+     color: #707070;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 25px;
+     margin-bottom: 10px;
+}
+.reviews h2{
+     font-size: 22px;
+     color: #000;
+     font-weight: 400;
+     text-transform: capitalize;
+     margin-bottom: 2px;
+}
+
+/* Editorial Update Cards Section */
+.up-center-text h2{
+     text-align: center;
+     color: #111;
+     font-size: 25px;
+     text-transform: capitalize;
+     font-weight: 700;
+     margin-bottom: 30px;
+}
+.cart img{
+     width: 100%;
+     height: auto;
+     border-radius: 5px;
+}
+.update-cart{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 2rem;
+}
+.cart h5{
+     color: #636872;
+     font-size: 14px;
+     text-transform: capitalize;
+     font-weight: 500;
+     margin: 10px 0 5px;
+}
+.cart h4{
+     color: #111;
+     font-size: 18px;
+     font-weight: 600;
+     margin-bottom: 8px;
+}
+.cart p{
+     color: #707070;
+     font-size: 15px;
+     line-height: 25px;
+     margin-bottom: 12px;
+}
+.cart h6{
+     color: #151515;
+     font-size: 14px;
+     font-weight: 500;
+}
+
+/* Footer layout elements */
+.contact{
+     background-color: var(--pink-color);
+}
+.contact-info{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+     gap: 3rem;
+}
+.first-info img{
+     width: 140px;
+     height: auto;
+}
+.contact-info h4{
+     color: #252129;
+     font-size: 14px;
+     text-transform: uppercase;
+     margin-bottom: 10px;
+}
+.contact-info p{
+     color: #565656;
+     font-size: 14px;
+     font-weight: 400;
+     text-transform: capitalize;
+     line-height: 1.5;
+     margin-bottom: 10px;
+     cursor: pointer;
+     transition: all .42s;
+}
+.contact-info p:hover{
+     color: #ee1c47;
+}
+.social-icon i{
+     color: #565656;
+     margin-right: 10px;
+     font-size: 20px;
+     transition: all .42s;
+}
+.social-icon i:hover{
+     transform: scale(1.3);
+}
+.third-info a{
+     color: #565656;
+}
+.third-info a:hover{
+     color: var(--red-color);
+}
+.end-text{
+     background-color: var(--lighter-pink-color);
+     text-align: center;
+     padding: 20px;
+}
+.end-text p{
+     color: #111;
+     text-transform: capitalize;
+}
+
+
+
+/* ==========================================================================
+   BOUTIQUE SUBPAGE GLOBAL EXTENSIONS
+   ========================================================================== */
+.boutique-subpage {
+     background-color: #fffdfd;
+}
+.active-nav {
+     color: var(--red-color) !important;
+     font-weight: bold;
+     border-bottom: 2px solid var(--red-color);
+}
+
+/* 1. Creative Hero Structural Layouts */
+.boutique-hero {
+     position: relative;
+     width: 100%;
+     height: 55vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 0 15%;
+     margin-top: 77px;
+     overflow: hidden;
+}
+.hero-overlay {
+     position: absolute;
+     top:0; left:0; width:100%; height:100%;
+     background: linear-gradient(to bottom, rgba(255, 222, 228, 0.4), rgba(255, 253, 253, 1));
+     z-index: 1;
+}
+.hero-overlay.variations {
+     background: linear-gradient(to bottom, rgba(250, 237, 240, 0.6), rgba(255, 253, 253, 1));
+}
+
+/* Fallback high-fashion layout visual assets */
+.bag-bg {
+     background: url('../images/bag-bg2.jpg') center/cover no-repeat;
+     position: relative;
+}
+.acc-bg {
+     background: url('../images/accessories-bg.jpg') center/cover no-repeat;
+     position: relative;
+}
+
+.boutique-hero-text {
+     position: relative;
+     z-index: 2;
+     max-width: 750px;
+}
+.boutique-hero-text span {
+     font-size: 13px;
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     color: var(--brown-color);
+     font-weight: 700;
+     display: block;
+     margin-bottom: 12px;
+}
+.boutique-hero-text h1 {
+     font-family: 'Playfair Display', serif;
+     font-size: 3.5rem;
+     font-weight: 400;
+     color: var(--dark-brown-color);
+     margin-bottom: 15px;
+}
+.boutique-hero-text p {
+     font-size: 1rem;
+     color: var(--black-color);
+     line-height: 1.6;
+     opacity: 0.85;
+}
+
+/* 2. Premium Magazine Editorial Text Structures */
+.editorial-statement {
+     padding: 4rem 15% 1rem;
+     text-align: center;
+}
+.statement-wrap {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     max-width: 800px;
+     margin: 0 auto;
+     gap: 15px;
+}
+.drop-caps {
+     font-family: 'Playfair Display', serif;
+     font-size: 4.2rem;
+     line-height: 0.85;
+     color: var(--red-color);
+     margin-top: 5px;
+}
+.statement-text {
+     font-family: 'Playfair Display', serif;
+     font-style: italic;
+     font-size: 1.35rem;
+     line-height: 1.7;
+     color: var(--dark-brown-color);
+     text-align: left;
+}
+
+/* 3. Unique Creative Content Grids */
+.gallery-showcase {
+     padding: 2rem 8% 6rem;
+}
+.editorial-grid {
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+     gap: 3.5rem 2.5rem !important;
+}
+
+/* Asymmetric Photo Frame Borders */
+.legacy-card .img-frame {
+     position: relative;
+     overflow: hidden;
+     border-radius: 1.5rem 1.5rem 0 0;
+     background-color: var(--lighter-pink-color);
+     box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+}
+.legacy-card img {
+     display: block;
+     object-fit: cover;
+     height: 380px;
+     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.legacy-card:hover img {
+     transform: scale(1.05);
+}
+
+/* Tall Layout Offset Alternation rule */
+@media(min-width: 900px) {
+     .tall-layout img {
+          height: 460px !important;
+     }
+     .tall-layout {
+          transform: translateY(-30px);
+     }
+}
+
+/* Circular Fine Avant-Garde Frames */
+.dynamic-masonry-look {
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+     gap: 4rem 3rem !important;
+}
+.luxury-accent-card {
+     text-align: center;
+}
+.img-frame-round {
+     position: relative;
+     border-radius: 50%;
+     overflow: hidden;
+     margin-bottom: 20px;
+     aspect-ratio: 1 / 1;
+     border: 1px solid var(--pink-color);
+     box-shadow: 0 10px 30px rgba(139, 94, 60, 0.04);
+}
+.img-frame-round img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.8s ease;
+}
+.luxury-accent-card:hover .img-frame-round img {
+     transform: scale(1.08) rotate(1deg);
+}
+.luxury-accent-card .cart-action-icon {
+     top: auto;
+     bottom: 15px;
+     right: 50%;
+     transform: translateX(50%);
+     opacity: 0;
+}
+.luxury-accent-card:hover .cart-action-icon {
+     opacity: 1;
+     bottom: 25px;
+}
+
+/* Subpage Clean Footer Signatures */
+.subpage-footer {
+     border-top: 1px solid var(--lighter-pink-color);
+     padding: 30px;
+     text-align: center;
+     background: #fff;
+}
+.subpage-footer p {
+     font-size: 13px;
+     color: var(--brown-color);
+     letter-spacing: 0.5px;
+}
+.subpage-footer a {
+     color: var(--red-color);
+     font-weight: 700;
+}
+
+/* Responsive Adaptive Viewports */
+@media(max-width: 768px) {
+     .boutique-hero { height: 40vh; }
+     .boutique-hero-text h1 { font-size: 2.2rem; }
+     .statement-text { font-size: 1.1rem; }
+     .tall-layout { transform: translateY(0); }
+     .legacy-card img { height: 320px; }
+     .luxury-accent-card .cart-action-icon { opacity: 1; }
+}
+
+
+/* ==========================================================================
+   MEDIA CONTROLS & NEW REVISED SIMPLIFIED DRAWER OVERLAYS
+   ========================================================================== */
+@media(max-width:890px){
+     header, header.sticky {
+          padding: 20px 3%;
+     }
+}
+
+@media(max-width:750px){
+     .minimal-burger {
+          display: block; /* Shows modern line toggler on mobile viewports */
+     }
+
+     /* Beautiful Glassmorphism Simplified Pink Drawer Layout */
+     .navmenu {
+          position: fixed;
+          top: 92px; 
+          right: -100%;
+          width: 290px;
+          height: auto; 
+          max-height: calc(100vh - 120px);
+          background: rgba(255, 253, 253, 0.98);
+          backdrop-filter: blur(15px);
+          -webkit-backdrop-filter: blur(15px);
+          border: 1.5px solid var(--pink-color);
+          border-radius: 2rem;
+          box-shadow: -8px 12px 30px rgba(139, 94, 60, 0.08);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 1.2rem;
+          z-index: 998;
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+     }
+     
+     .navmenu.open {
+          right: 2%; 
+     }
+
+     .navmenu ul {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 6px;
+     }
+     .navmenu a {
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 500;
+          color: var(--dark-brown-color);
+          padding: 12px 24px;
+          margin: 0;
+          border-radius: 1.2rem;
+          transition: all 0.3s ease;
+     }
+     
+     /* Clean aesthetic soft link hover background */
+     .navmenu a:hover {
+          background-color: var(--lighter-pink-color);
+          color: var(--red-color);
+          transform: translateY(-1px);
+     }
+}
+
+@media(max-width:630px){
+     .main-text h1{ font-size: 40px; line-height: 48px; }
+     .main-text p{ font-size: 16px; }
+     .main-text{ left: 50%; width: 80%; }
+}
