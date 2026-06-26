@@ -50,3 +50,15 @@ You do not need to install any databases, servers, or packages to run this proje
 └── images/
     ├── Website_Logo.png    # Storefront Brand Logo
     └── [product-images]    # Folder containing all local product image files
+```
+
+---
+
+## 🚀 Future Plans
+
+I plan to continue improving this project by:
+
+- Optimizing the website's loading speed and overall performance.
+- Compressing images and reducing asset sizes for faster page loads.
+- Adding more features and enhancing the user experience.
+- Refactoring the code to improve maintainability and scalability.
