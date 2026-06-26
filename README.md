@@ -22,13 +22,15 @@ A modern, responsive e-commerce storefront for a fashion boutique. Built from sc
 ## 🛠️ How to Run the Project
 
 You do not need to install any databases, servers, or packages to run this project! Follow these simple steps:
+### Option 1: Click on URL (Easiest)
+(https://mk-dev911.github.io/E-commerce-Shopping-Website/)
 
-### Option 1: Direct Run (Easiest)
+### Option 2: Direct Run 
 1. **Download or clone** this repository to your computer.
 2. Locate the project folder and **double-click `index.html`**. 
 3. It will instantly open and run perfectly inside your default web browser (Chrome, Safari, Edge, etc.).
 
-### Option 2: Using VS Code Live Server (Best for Editing)
+### Option 3: Using VS Code Live Server (Best for Editing)
 1. Open the project folder inside **Visual Studio Code**.
 2. If you don't have it, install the **Live Server** extension (by Ritwick Dey).
 3. Right-click on `index.html` in your sidebar and select **Open with Live Server**.
